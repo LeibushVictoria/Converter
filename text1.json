@@ -1,0 +1,13 @@
+{
+   "firstName": "Masha",
+   "lastName": "Sidorova",
+   "address": {
+       "streetAddress": "Hoshimina",
+       "city": "SPb",
+       "postalCode": "111111"
+   },
+   "phoneNumbers": [
+       "999 999-9999",
+       "111 111-1111"
+   ]
+}

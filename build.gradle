@@ -1,0 +1,24 @@
+apply plugin: 'docker'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
+docker {
+    baseImage "python:alpine3.8"
+    maintainer "leibush-viktoriy@mail.ru"
+}
+
+task Json2Yaml(type: Docker) {
+    applicationName = "jsonapp"
+    runCommand('pip3 install flask pyyaml')
+    addFile('./app', '/app')
+    workingDir('/app')
+    exposePort 80
+    defaultCommand(['python3','app.py']) 
+}
